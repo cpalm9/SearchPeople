@@ -1,0 +1,6 @@
+﻿#my-jumbotron {
+  background-image: url('path/to/background/image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

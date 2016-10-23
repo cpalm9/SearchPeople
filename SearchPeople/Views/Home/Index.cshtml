@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Search all the people!</h1>
+    <p class="lead"></p>
+    <p></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>People Search</h2>
+        <p>
+            @using (Html.BeginForm())
+            {
+                <p>
+                    First or Last Name: @Html.TextBox("Search People")<br /><br />
+                    <input type="submit" value="Search"/>
+                </p>
+            }
+    </div>
+    <div class="col-md-4">
+       
+    </div>
+    <div class="col-md-4">
+       
+    </div>
+</div>
