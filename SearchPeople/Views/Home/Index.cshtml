@@ -9,21 +9,50 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
         <h2>People Search</h2>
-        <p>
-            @using (Html.BeginForm())
-            {
-                <p>
-                    First or Last Name: @Html.TextBox("Search People")<br /><br />
-                    <input type="submit" value="Search"/>
-                </p>
-            }
-    </div>
-    <div class="col-md-4">
-       
-    </div>
-    <div class="col-md-4">
-       
-    </div>
+        <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <form>
+            <input type="text" id="searchInput" />
+            <button id="searchButton">Search</button>
+        </form>
+
+        <script>
+            $('#searchButton').click(function (event) {
+                event.preventDefault();
+                    $.ajax({
+                        url: '@Url.Action("SearchResult", "Person")',
+                        data: { format: JSON, q: $('#searchInput').val() },
+                        type: 'GET',
+                        success: function (data) {
+                            var output = $('#myDiv');
+                            output.empty();
+                            for (var i = 0; i < data.length; i++) {
+                                var person = data[i];
+                                output.append("<tr><td>" + person.ID + "</td><td>" +
+                                    person.lastName + "</td><td>" + person.firstName + "</td><td>" + person.age +
+                                    "</td><td>" + person.address + "</td><td>" + person.interests + "</td><td>" + "<img src='/Person/puppy1.jpg'>" + "</td></tr>");
+                            }
+                        }
+                    });
+                });
+        </script>
+        <div>
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>Interests</th>
+                        <th>Profile Picture</th>
+                    </tr>
+                </thead>
+                <tbody id="myDiv">
+                    <!--Search results go here-->
+                    
+                </tbody>
+            </table>
+        </div>
 </div>
