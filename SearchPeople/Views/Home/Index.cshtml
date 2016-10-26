@@ -7,7 +7,6 @@
     <p class="lead"></p>
     <p></p>
 </div>
-
 <div class="row">
         <h2>People Search</h2>
         <script src="~/Scripts/jquery-3.1.1.min.js"></script>
@@ -15,7 +14,6 @@
             <input type="text" id="searchInput" />
             <button id="searchButton">Search</button>
         </form>
-
         <script>
             $('#searchButton').click(function (event) {
                 event.preventDefault();
@@ -28,10 +26,10 @@
                             output.empty();
                             for (var i = 0; i < data.length; i++) {
                                 var person = data[i];
-                                output.append("<tr><td>" + person.ID + "</td><td>" +
-                                    person.lastName + "</td><td>" + person.firstName + "</td><td>" + person.age +
-                                    "</td><td>" + person.address + "</td><td>" + person.interests + "</td><td>" + "<img src='/Person/puppy1.jpg'>" + "</td></tr>");
-                            }
+                                output.append('<tr><td>' + person.ID + '</td><td>' +
+                                    person.lastName + '</td><td>' + person.firstName + '</td><td>' + person.age +
+                                    '</td><td>' + person.address + '</td><td>' + person.interests + '</td><td>' + '<img src=" ' + person.profilePicture + ' " style="height: 100px; width: 50px;" />' + '</td></tr>');
+                             }
                         }
                     });
                 });

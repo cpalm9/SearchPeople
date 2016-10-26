@@ -1,6 +1,10 @@
 ﻿#my-jumbotron {
-  background-image: url('path/to/background/image.png');
+  background-image: url('');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+#profiles {
+    height: 25px;
+    width: 75px;
 }
