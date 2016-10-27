@@ -31,9 +31,9 @@
         <th>
             @Html.DisplayNameFor(model => model.interests)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.profilePicture)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -54,9 +54,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.interests)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.profilePicture)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
